@@ -8,12 +8,24 @@ choreographed to the same progress value, everything lerped.
 **The hero metaphor:** an opaque voxel cube you can verify but never see inside.
 Privacy-that-proves-itself, rendered literally.
 
+**Live:** https://0xified.github.io/miden-launch/
+
 ## Run
 
 ```bash
 npm install
 npm run dev        # http://localhost:3000
 node scripts/shoot.mjs [url]   # headless visual smoke test -> /tmp/miden-*.png
+```
+
+## Deploy (GitHub Pages)
+
+```bash
+GH_PAGES=1 npm run build
+cd out && touch .nojekyll && git init -b gh-pages && git add -A \
+  && git commit -m "Deploy" \
+  && git push -f https://github.com/0xified/miden-launch.git gh-pages \
+  && cd .. && rm -rf out/.git
 ```
 
 ## The five acts
